@@ -17,20 +17,24 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- theme
-  use 'ellisonleao/gruvbox.nvim'
-  use 'EdenEast/nightfox.nvim'
+  use 'nvim-tree/nvim-web-devicons'
   use "folke/tokyonight.nvim"
+  use 'ellisonleao/gruvbox.nvim' -- theme
+  use 'EdenEast/nightfox.nvim' -- theme
+  use 'sainnhe/everforest' -- theme
+  use 'lewis6991/gitsigns.nvim' -- For git status with barbar
 
   -- plugin 
-  use 'nvim-tree/nvim-tree.lua'
-  use 'nvim-tree/nvim-web-devicons'
+  use 'nvim-tree/nvim-tree.lua' -- side bar
 
-  use 'nvim-lualine/lualine.nvim'
-  use 'nvim-treesitter/nvim-treesitter'
+  use 'nvim-lualine/lualine.nvim' -- bottom bar
+  use 'nvim-treesitter/nvim-treesitter' -- finder
 
-  use("petertriho/nvim-scrollbar")
+  use "petertriho/nvim-scrollbar" -- scroll
 
-  use 'terrortylor/nvim-comment'
+  use 'terrortylor/nvim-comment' -- comment out
+
+  use 'romgrk/barbar.nvim' -- tab
 
   -- notification
   use{
