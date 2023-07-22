@@ -20,7 +20,12 @@ vim.opt.number = true
 
 
 local keymap = vim.keymap
-keymap.set('n', '<leader>n', ':nohlsearch<CR>', {noremap = true})
+local opt = {noremap = true, silent = true}
+
+keymap.set('n', '<leader>n', ':nohlsearch<CR>', opt)
 
 -- jk to edit
-keymap.set('i', 'jk', '<ESC>', {noremap = true})
+keymap.set('i', 'jk', '<ESC>', opt)
+
+-- <space>\ to quit
+keymap.set('n', '<leader>\\', ":q<CR>" ,opt)

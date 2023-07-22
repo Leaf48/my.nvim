@@ -36,6 +36,26 @@ return require('packer').startup(function(use)
 
   use 'romgrk/barbar.nvim' -- tab
 
+  use 'RRethy/vim-illuminate' -- highlight the word the cursor
+
+  -- highlight arguments
+  use {
+    'm-demare/hlargs.nvim',
+    config = function() require("hlargs").setup() end
+
+  }
+
+  -- auto pairs
+  use { -- parenthesis
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
+  use {
+    "windwp/nvim-ts-autotag",
+    config = function () require('nvim-ts-autotag').setup() end
+  }
+
+
   -- notification
   use{
     "folke/noice.nvim",
@@ -45,9 +65,10 @@ return require('packer').startup(function(use)
 
   -- cmp
   use {
-    "hrsh7th/nvim-cmp",
+    "hrsh7th/nvim-cmp", -- main
     "hrsh7th/cmp-buffer",
-    "hrsh7th/cmp-path"
+    "hrsh7th/cmp-path",
+    'hrsh7th/cmp-calc'
   }
   -- snippets
   use {
