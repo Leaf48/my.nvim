@@ -18,6 +18,7 @@ vim.opt.shiftround = true
 vim.opt.expandtab = true
 vim.opt.number = true
 
+vim.o.clipboard = "unnamedplus"
 
 local keymap = vim.keymap
 local opt = {noremap = true, silent = true}
