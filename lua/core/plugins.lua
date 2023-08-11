@@ -91,16 +91,9 @@ return require('packer').startup(function(use)
     'onsails/lspkind.nvim'
   }
 
-  -- chowcho / clipboard
+  -- chowcho
   use {'tkmpypy/chowcho.nvim'}
 
-  -- registers
-  use {
-    "tversteeg/registers.nvim",
-    config = function()
-      require("registers").setup()
-    end,
-  }
   -- toggle term
   use {
     "akinsho/toggleterm.nvim", tag = '*', config = function()

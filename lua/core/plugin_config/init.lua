@@ -21,7 +21,6 @@ require('core.plugin_config.telescope')
 require('core.plugin_config.treesitter')
 require('core.plugin_config.toggle-term')
 require('core.plugin_config.hop')
-require('core.plugin_config.register')
 require('core.plugin_config.chowcho')
 require('core.plugin_config.comment')
 
