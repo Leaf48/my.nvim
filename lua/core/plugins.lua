@@ -17,8 +17,8 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- theme
-  use 'nvim-tree/nvim-web-devicons'
-  use "folke/tokyonight.nvim"
+  use 'nvim-tree/nvim-web-devicons' -- theme
+  use "folke/tokyonight.nvim" -- theme
   use 'ellisonleao/gruvbox.nvim' -- theme
   use 'EdenEast/nightfox.nvim' -- theme
   use 'sainnhe/everforest' -- theme
@@ -50,7 +50,7 @@ return require('packer').startup(function(use)
     "windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
   }
-  use {
+  use { -- html
     "windwp/nvim-ts-autotag",
     config = function () require('nvim-ts-autotag').setup() end
   }
@@ -104,16 +104,15 @@ return require('packer').startup(function(use)
   -- hop
   use {
     'phaazon/hop.nvim',
-    branch = 'v2', -- optional but strongly recommended
+    branch = 'v2',
     config = function()
-      -- you can configure Hop the way you like here; see :h hop-config
       require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
     end
   }
 
   -- telescope
   use {
-    'nvim-telescope/telescope.nvim', 
+    'nvim-telescope/telescope.nvim',
     tag = '0.1.2',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
@@ -125,12 +124,17 @@ return require('packer').startup(function(use)
     requires = {"kkharji/sqlite.lua"}
   }
 
-  -- My plugins here
-  -- use 'foo1/bar1.nvim'
-  -- use 'foo2/bar2.nvim'
+  -- dashboard / startup
+  use "nvim-lua/plenary.nvim" -- dependency for dashboard
+  use {
+    "startup-nvim/startup.nvim",
+    requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+    config = function()
+      require"startup".setup()
+    end
+  }
 
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
+  --------------------------------------------------------
   if packer_bootstrap then
     require('packer').sync()
   end
